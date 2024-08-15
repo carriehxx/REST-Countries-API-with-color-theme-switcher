@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution URL](https://your-solution-url.com)
+- Solution URL: [Solution URL](https://github.com/carriehxx/REST-Countries-API-with-color-theme-switcher.git)
 - Live Site URL: [Live site URL](http://127.0.0.1:5500/rest-countries-api-with-color-theme-switcher-master/index.html)
 
 
@@ -40,7 +40,7 @@ Not yet finishing the searching and filtering part, need further development...
 
 ## Author
 
-- Website - [Xin Huang](https://www.your-site.com)
+- Website - [Xin Huang](#)
 - Frontend Mentor - [@carriehxx](https://www.frontendmentor.io/profile/carriehxx)
 - Twitter - [@XinHuang1456711](https://www.twitter.com/XinHuang1456711)
 
