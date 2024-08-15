@@ -23,7 +23,7 @@ Users should be able to:
 
 ![image](https://github.com/user-attachments/assets/c063147e-d7d3-4fbb-8115-ee8b34ab4cda)
 
-![image](https://github.com/user-attachments/assets/bb7d5b99-5383-4ce2-8243-82d90d267749 = 100x)
+![image](https://github.com/user-attachments/assets/bb7d5b99-5383-4ce2-8243-82d90d267749 =100x)
 
 
 ### Links
