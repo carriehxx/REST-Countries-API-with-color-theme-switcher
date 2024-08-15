@@ -1,0 +1,525 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+:root {
+    --clr-darkMode-element: hsl(209, 23%, 22%);
+    --clr-darkMode-background: hsl(207, 26%, 17%);
+    --clr-lightMode--text: hsl(200, 15%, 8%);
+    --clr-lightMode--input: hsl(0, 0%, 52%);
+    --clr-lightMode--background: hsl(0, 0%, 98%);
+    --clr-darkMode--text--lightMode--element: hsl(0, 0%, 100%);
+
+    --ff-primary: "Nunito Sans", sans-serif;
+    --font--weight-300: var(--font-family) 300;
+    --font--weight-600: var(--font-family) 600;
+    --font--weight-800: var(--font-family) 800;
+
+}
+
+html[data-theme="light"] {
+    --clr-background: var(--clr-lightMode--background);
+    --clr-text-color: var(--clr-lightMode--text);
+    --clr-element: var(--clr-darkMode--text--lightMode--element);
+}
+
+html[data-theme="dark"] {
+    --clr-background: var(--clr-darkMode-background);
+    --clr-text-color: var(--clr-darkMode--text--lightMode--element);
+    --clr-element: var(--clr-darkMode-element);
+}
+
+/* html {
+    position: relative;
+} */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* transition: all .2s ease-in-out; */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+/* 这个有一点小问题，后面解决 */
+/* header {
+    position: sticky;
+} */
+
+.page_nav {
+    font: var(--font--weight-800);
+    background-color: var(--clr-element);
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2rem 2rem 1.2rem 2rem;
+    color: var(--clr-text-color);
+}
+
+.page_nav .logo {
+    font-weight: 1000;
+    word-spacing: 2px;
+}
+
+.change_mode {
+    position: relative;
+    border: none;
+    background-color: inherit;
+    color: var(--clr-text-color);
+    min-width: 6rem;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.change_mode:hover {
+    transform: scale(1.05);
+}
+
+.change_mode .moon {
+    position: absolute;
+    left:-.6rem;
+}
+
+body {
+    background-color: var(--clr-background);
+}
+
+section {
+    padding: 1.5rem 2rem 1.5rem 2rem;
+    line-height: 2rem;
+    width: 100vw;
+}
+
+.primary_page {
+    display: block;
+    /* display: none; */
+}
+
+.look_for {
+    position: relative;
+}
+
+.finding {
+    /* background-color: aliceblue; */
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.searching {
+    /* background-color: red; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--clr-text-color);
+}
+
+.searching .bx-search {
+    position: absolute;
+    left:1.5rem;
+    
+}
+
+.searching .searching_box {
+    padding: 1rem 5rem 1rem 4rem;
+    width: 30vw;
+    height: 3rem;
+    border: none;
+    border-radius: 10px;
+    font-size: .7rem;
+    background-color: var(--clr-element);
+    outline-color: var(--clr-text-color);
+}
+
+
+.searching_box::placeholder {
+    color: var(--clr-text-color);
+}
+
+.filtering {
+    position: relative;
+    /* background-color: red; */
+    width: 10rem;
+}
+
+.filtering .fliter_btn {
+    background-color: var(--clr-element);
+    color: var(--clr-text-color);
+    border: none;
+    border-radius: 10px;
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    font-size: .7rem;
+    width: inherit;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.filter_region {
+    margin-top: .5rem;
+    width: inherit;
+    background-color: var(--clr-element);
+    border-radius: 10px;
+    /* padding: .6rem 0 .6rem 0; */
+    font-size: .7rem;
+    color: var(--clr-text-color);
+    /* flex和block的区别 */
+    position: absolute;
+    display: none;
+}
+
+.regions {
+    width: inherit;
+}
+
+.filter_region li {
+    
+    /* background-color: red; */
+    padding: 0 1rem;
+    /* border-radius: 10px; */
+    /* transition: all .2s ease-in-out; */
+    cursor: pointer;
+}
+
+.filter_region li:hover {
+    background-color: var(--clr-background);
+    border-radius: 10px;
+}
+
+.country_container {
+    padding-top: 0;
+    /* height: 200vh; */
+    background-color: var(--clr-background);
+    display: flex;
+    /* flex-direction: row; */
+    gap: 2.125rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.country {
+    /* width: ; */
+    /* clamp(10rem, 22vw, 15rem) */
+    background-color: var(--clr-element);
+    color: var(--clr-text-color);
+    /* position: relative; */
+    line-height: 0;
+    /* 这个有点搞不懂 */
+    flex: 0 1 clamp(10rem, 22vw, 15rem);
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0px 0px 5px 2px rgba(31, 31, 31, 0.402);
+    /* box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.402); */
+}
+
+.country * {
+    border-radius: 5px;
+}
+
+.country:hover,
+.country:focus {
+    transform: scale(1.05);
+    
+}
+
+.country .cty_info {
+    padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+    background-color: var(--clr-element);
+    font-size: 0.5rem;
+    line-height: 1.8rem;
+    color: var(--clr-text-color);
+    /* position: absolute; */
+
+}
+
+.country ul {
+    line-height: 1.2rem;
+    
+}
+
+/* .cty_img {
+    aspect-ratio: 5/3;
+    width: 100%;
+
+} */
+
+.cty_img img {
+    aspect-ratio: 5/3;
+    width: 100%;
+    /* position: relative; */
+}
+
+.country span {
+    font-weight: 900;
+}
+
+.country .country_name {
+    font-size: .8rem;
+}
+
+
+
+
+
+
+/* for infomation page */
+.infomation {
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+}
+
+.backwards {
+    /* background-color: red; */
+    padding: 3rem 2rem;
+    display: flex;
+}
+
+.backwards * {
+    border-radius: 5px;
+    outline: none;
+}
+
+.back_btn {
+    background-color: transparent;
+    /* left: 0; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back_btn .back {
+    width: 6rem;
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    background-color: var(--clr-element);
+    color: var(--clr-text-color);
+    padding: 0.4rem;
+    border: none;
+    box-shadow: 0px 0px 5px 2px rgba(31, 31, 31, 0.402);
+    cursor: pointer;
+}
+
+.back:hover {
+    transform: scale(1.05);
+}
+
+
+/* section {
+    padding: 1.5rem 2rem 1.5rem 2rem;
+    line-height: 2rem;
+    width: 100vw;
+} */
+
+.one-detail {
+    /* line-height: 1; */
+    display: flex;
+    /* grid-template-columns: 2, 1fr1; */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    background-color: var(--clr-background);
+    padding-top: 0;
+
+}
+
+.one-detail * {
+    width: 40vw;
+}
+
+.one-flag img {
+    aspect-ratio: 5/3;
+    width: 100%;
+    box-shadow: 0px 0px 5px 2px rgba(31, 31, 31, 0.402);
+    /* box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.402); */
+}
+
+.one-info {
+    /* background-color: var(--clr-background); */
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    justify-content: center;
+    align-items: left;
+    height: inherit;
+    padding: 0rem 2rem 2rem 2rem;
+    color: var(--clr-text-color);
+    background-color: var(--clr-background);
+    /* background-color: rebeccapurple; */
+}
+
+.one-info span {
+    font-weight: 1000;
+}
+
+.one-info .one-name {
+    font-size: 1.5rem;
+}
+
+/* .border-country p {
+    width: 14rem;
+} */
+
+.border-country span {
+    font-size: .7rem;
+}
+
+/* .one-info .stats {
+    width: 50%;
+} */
+
+.stats *{
+    width: 18vw;
+}
+
+.one-info .one-all-stats {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 30vh;
+    gap: 10px;
+    font-size: .7rem;
+    /* background-color: aqua; */
+}
+
+
+.one-info .border-country {
+    display: flex;
+    gap: 10px;
+    width: 35vw;
+    /* background-color: red; */
+}
+
+.border-country .borderBtn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: left;
+    align-items: center;
+    font-size: .7rem;
+    /* background-color: black; */
+    /* padding-right: 2rem; */
+}
+
+.border-country p,
+.border-country-tag {
+    width: auto;
+}
+
+
+
+.border-country .border-country-tag {
+    padding: .5rem 1rem;
+    align-items: center;
+    justify-content: center;
+    font-size: inherit;
+    border: none;
+    background-color: var(--clr-element);
+    border-radius: 2px;
+    color: var(--clr-text-color);
+    box-shadow: 0px 0px 1px 1px rgba(31, 31, 31, 0.402);
+    cursor: pointer;
+
+}
+
+.border-country-tag:hover {
+    transform: scale(1.05);
+}
+
+
+@media screen and (max-width: 800px)  {
+    
+    /* .searching_box {
+        padding-right: 1rem;
+    } */
+    section {
+        padding: 1.5rem 2rem 1.5rem 2rem;
+        line-height: 2rem;
+        width: 100vw;
+    }
+    
+    .finding,
+    .country_container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        /* position: relative; */
+    }
+
+    .searching,
+    .searching .searching_box {
+        width: 100%;
+    }
+
+
+    .searching_box::placeholder {
+        color: transparent;
+    }
+
+    .filtering,
+    .fliter_btn,
+    .filter_region {
+        width: 40vw;
+    }
+
+    .backwards,
+    .back_btn,
+    .back {
+        width: 40vw;
+    }
+    .one-detail  * {
+        width: 80vw;
+    }
+
+    .one-detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .one-info {
+        padding: 0;
+        /* background-color: black; */
+    }
+
+    /* .stats * {
+        height: 100vh;
+    } */
+
+    .one-info .one-all-stats {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        /* display: grid;
+        grid-template-columns: 1fr; */
+        justify-content: left;
+        align-items: center;
+        height: auto;
+    }
+
+    .border-country {
+        display: flex;
+        flex-direction: column;
+    }
+    .border-country-tag {
+        width: auto;
+    }
+}

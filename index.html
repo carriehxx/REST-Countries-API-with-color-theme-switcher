@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme = "dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces&family=Barlow" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="index.js" defer></script>
+    
+    <title>Where in the world?</title>
+
+</head>
+<body>
+    <header>
+        <nav class="page_nav">
+            <a class="logo" href="#">Where in the world?</a>
+            <div class="mode">
+                <button class="change_mode" >
+                    <i class='bx bxs-moon icon'></i> Dark Mode
+                </button>
+            </div>
+
+        </nav>
+    </header>
+
+    <main class="primary_page">
+        <section class="look_for">
+            <div class="finding">
+                <div class="searching">
+                    <i class='bx bx-search' ></i>
+                    <input class="searching_box" type="text" placeholder="Search for a country...">
+                </div>
+                <div class="filtering">
+                    <button class="fliter_btn">Filter by Regions <i class='bx bx-chevron-down' ></i></button>
+                    <div class="filter_region">
+                        <ul class="regions">
+                            <li class="single_reg">Africa</li>
+                            <li class="single_reg">America</li>
+                            <li class="single_reg">Asia</li>
+                            <li class="single_reg">Europe</li>
+                            <li class="single_reg">Oceania</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="country_container">
+            
+            <!-- <div class="country">
+                <div class="cty_img">
+                    <img src="#" alt="country_flag">
+                </div>
+                <div class="cty_info">
+                    <span class="country_name">
+                        USA
+                    </span>
+                    <ul class="country_basic_info">
+                        <li><span class="basic_info">Population: </span>15313</li>
+                        <li><span class="basic_info">Region: </span>15313</li>
+                        <li><span class="basic_info">Capital: </span>15313</li>
+                    </ul>
+                </div>
+            </div> -->
+        </section>
+    </main>
+
+    <main class="infomation">
+        <section class="backwards">
+            <div class="back_btn">             
+                <button class="back"><i class='bx bx-left-arrow-alt'></i> Back</button>
+            </div>
+        </section>
+
+        <!-- <section class="one-detail">
+            <div class="one-flag">
+                <img src="${Countrystats.flags.png}" alt="${countryName}-flag">
+            </div>
+            <div class="one-info">
+                <span class="one-name">${Countrystats.name}</span>
+                <div class="stats">
+                    <ul class="one-all-stats">
+                        <li><span>Native Name: </span>${Countrystats.nativeName}</li>
+                        <li><span>Population: </span>${Countrystats.population}</li>
+                        <li><span>Region: </span>${Countrystats.region}</li>
+                        <li><span>Sub Region: </span>${Countrystats.subregion}</li>
+                        <li><span>Capital: </span>${Countrystats.capital}</li>
+                        <li><span>Top Level Domain: </span>${Countrystats.topLevelDomain.join(', ')}</li>
+                        <li><span>Currencies: </span>${Countrystats.currencies.map(currency => currency.name).join(', ')}</li>
+                        <li><span>Languages: </span>${Countrystats.languages.map(language => language.name).join(', ')}</li>
+                    </ul>
+                </div class="border-country">
+                <p><span>Border Countries: </span></p>
+                <div class="borderBtn">
+                    <button class="border-country-tag" data-country=${borderCountry.name.replace(/\s+/g, '-')}>${borderCountry.name}</button>
+                </div>
+            </div>
+        </section> -->
+    </main>
+</body>
+</html>
+
+
