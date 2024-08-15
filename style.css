@@ -31,6 +31,8 @@ html[data-theme="dark"] {
     position: relative;
 } */
 
+
+
 *,
 *::before,
 *::after {
@@ -50,12 +52,14 @@ li {
 }
 
 .page_nav {
+    /* transition: all .2s ease-in-out; */
     font: var(--font--weight-800);
     background-color: var(--clr-element);
     display: flex;
     justify-content: space-between;
     padding: 1.2rem 2rem 1.2rem 2rem;
     color: var(--clr-text-color);
+    box-shadow: 0px 0px 5px 2px rgba(31, 31, 31, 0.402);
 }
 
 .page_nav .logo {
@@ -84,12 +88,14 @@ li {
 
 body {
     background-color: var(--clr-background);
+    
 }
 
 section {
     padding: 1.5rem 2rem 1.5rem 2rem;
     line-height: 2rem;
     width: 100vw;
+    
 }
 
 .primary_page {
@@ -114,6 +120,7 @@ section {
     display: flex;
     align-items: center;
     color: var(--clr-text-color);
+    
 }
 
 .searching .bx-search {
@@ -131,6 +138,7 @@ section {
     font-size: .7rem;
     background-color: var(--clr-element);
     outline-color: var(--clr-text-color);
+    box-shadow: 0px 0px 5px 2px rgba(31, 31, 31, 0.402);
 }
 
 
@@ -157,6 +165,7 @@ section {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    box-shadow: 0px 0px 5px 2px rgba(31, 31, 31, 0.402);
 }
 
 
@@ -171,6 +180,7 @@ section {
     /* flex和block的区别 */
     position: absolute;
     display: none;
+    box-shadow: 0px 0px 5px 2px rgba(31, 31, 31, 0.402);
 }
 
 .regions {
@@ -518,3 +528,4 @@ section {
         width: auto;
     }
 }
+
