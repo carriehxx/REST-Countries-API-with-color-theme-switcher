@@ -29,9 +29,6 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution URL](https://github.com/carriehxx/REST-Countries-API-with-color-theme-switcher.git)
-- Live Site URL: [Live site URL](http://192.168.1.222:5500/rest-countries-api-with-color-theme-switcher-master/index.html)
-
-
 
 ### Continued development
 
