@@ -214,6 +214,7 @@ section {
 }
 
 .country {
+    /* display: block; */
     /* width: ; */
     /* clamp(10rem, 22vw, 15rem) */
     background-color: var(--clr-element);

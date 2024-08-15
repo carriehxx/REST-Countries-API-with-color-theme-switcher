@@ -35,6 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         else {
             regionList.style.display = "none";
+            const allcountries = document.querySelectorAll('.country');
+            allcountries.forEach(country =>{
+                country.style.display = 'block';
+            });
         }
     }
 
@@ -51,6 +55,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const CountryDiv = document.createElement('div');
                 CountryDiv.classList.add('country');
                 CountryDiv.setAttribute('data-country', country.name.replace(/\s+/g, '-'));
+                
+                
 
                 CountryDiv.innerHTML = `
                     <div class="cty_img">
@@ -72,7 +78,65 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
 
+    //adding a debounce function to prevent prequent request
+    function debounce(func, wait) {
+        let timeout;
+
+        return function (...args) {
+            const context = this;
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(context, args), wait);
+        };
+    };
+
+    //achieving the searching function 
+    const inputBox = document.querySelector('.searching_box');
+    
+    inputBox.addEventListener('input', debounce(function(event) {
+        const searchcontent = event.target.value.trim().toLowerCase();
+        // const searchResult = countrydata.find( country => country.name.trim().toLowerCase() === searchcontent);
+        const allcountries = document.querySelectorAll('.country');
         
+        allcountries.forEach(element => {
+            const countryName = element.getAttribute('data-country').toLowerCase();
+
+            if (countryName.includes(searchcontent)){
+                element.style.display = 'block';
+            }
+            else {
+                element.style.display = 'none';
+            }
+        });
+    }, 300));
+
+    //this is for filtering out the selected regions
+    const regionBtn = document.querySelectorAll('.single_reg');
+
+    regionBtn.forEach(button => {
+        button.addEventListener('click', function() {
+            
+            const matchRegion = button.getAttribute('data-region-name');
+            const fittedCountries = countrydata.filter(country => country.region === matchRegion);
+            const allcountries = document.querySelectorAll('.country');
+            
+            // Hide all countries
+            allcountries.forEach(element => {
+                element.style.display = 'none';
+            });
+    
+            // Show only the countries that match the selected region
+            fittedCountries.forEach(country => {
+                // Find the DOM element with the matching country name
+                const countryElement = document.querySelector(`.country[data-country="${country.name}"]`);
+                if (countryElement) {
+                    countryElement.style.display = 'block';
+                }
+            });
+        });
+    });
+    
+
+
     // this is for displaying the detail of the cuntries
     // const countryButtons = document.querySelectorAll('.country, .border-country-tag');
     // this is to catch the country button clicked in the info_page
@@ -247,5 +311,7 @@ document.addEventListener('DOMContentLoaded', function() {
         main_page.style.display = "block";
         info_page.style.display = "none";
     }
-});
 
+    
+
+});
