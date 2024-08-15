@@ -49,11 +49,6 @@ li {
     list-style: none;
 }
 
-/* 这个有一点小问题，后面解决 */
-/* header {
-    position: sticky;
-} */
-
 .page_nav {
     font: var(--font--weight-800);
     background-color: var(--clr-element);
